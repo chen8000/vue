@@ -4,6 +4,7 @@ import router from './route'
 import fastClidk from 'fastclick'
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
+import './assets/styles/iconfont/iconfont.css'
 
 Vue.config.productionTip = false
 fastClidk.attach(document.body)
