@@ -2,7 +2,7 @@
     <div>
         <div class="title">周末去哪儿</div>
         <ul>
-            <li class="item border-bottom" :key="res.id" v-for="res in recommendList">
+            <li class="item border-bottom" :key="res.id" v-for="res in weekendList">
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="res.imgSrc" />
                 </div>
@@ -20,7 +20,7 @@ export default {
     name:'Weekend',
     data (){
         return {
-            recommendList:[
+            weekendList:[
                 {
                     id:'01',
                     imgSrc:require('@/assets/img/home/weekend/item1.jpg'),
@@ -42,7 +42,6 @@ export default {
 <style lang="stylus" scoped>
     @import '~@/assets/styles/mixins.styl'
     .title
-        margin-top: .2rem
         line-height :.8rem
         background: #eee
         text-indent:.2rem   
