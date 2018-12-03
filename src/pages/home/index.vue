@@ -9,9 +9,9 @@
 
 <script>
 
-import Header from './components/header'
-import HomeSwiper from './components/swiper'
-import Icons from './components/icons'
+import Header from './components/header.vue'
+import HomeSwiper from './components/swiper.vue'
+import Icons from './components/icons.vue'
 
 export default {
     name:'Home',
