@@ -19,23 +19,8 @@
 <script>
 export default {
     name:'Recommend',
-    data (){
-        return {
-            recommendList:[
-                {
-                    id:'01',
-                    imgSrc:require('@/assets/img/home/recommend/item1.jpg'),
-                    title:'北京野生动物园',
-                    desc:'17775条评论'
-                },
-                {
-                    id:'02',
-                    imgSrc:require('@/assets/img/home/recommend/item1.jpg'),
-                    title:'北京野生动物园',
-                    desc:'17775条评论'
-                }
-            ]
-        }
+    props:{
+        recommendList:Array
     }
 }
 </script>

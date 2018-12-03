@@ -6,13 +6,16 @@
         <div class="input">
             <i class="iconfont">&#xe600;</i>
             输入城市/景点/游玩主题</div>
-        <div class="right">城市<i class="iconfont right-icon">&#xe64a;</i></div>
+        <div class="right">{{ city }}<i class="iconfont right-icon">&#xe64a;</i></div>
     </div>
 </template>
 
 <script>
 export default {
-    name:'Header'
+    name:'Header',
+    props:{
+        city:String
+    }
 }
 </script>
 

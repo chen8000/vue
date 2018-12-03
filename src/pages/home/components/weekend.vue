@@ -18,23 +18,8 @@
 <script>
 export default {
     name:'Weekend',
-    data (){
-        return {
-            weekendList:[
-                {
-                    id:'01',
-                    imgSrc:require('@/assets/img/home/weekend/item1.jpg'),
-                    title:'北京野生动物园',
-                    desc:'17775条评论'
-                },
-                {
-                    id:'02',
-                    imgSrc:require('@/assets/img/home/weekend/item1.jpg'),
-                    title:'北京野生动物园',
-                    desc:'17775条评论'
-                }
-            ]
-        }
+    props:{
+        weekendList:Array
     }
 }
 </script>

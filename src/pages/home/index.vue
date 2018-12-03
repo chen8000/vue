@@ -1,11 +1,11 @@
 
 <template>
     <div class="home">
-        <Header />
-        <HomeSwiper />
-        <Icons />
-        <Recommend />
-        <Weekend />
+        <Header :city = "city"/>
+        <HomeSwiper :item = "swiperList"/>
+        <Icons :icons = "icons"/>
+        <Recommend :recommendList = "recommendList"/>
+        <Weekend :weekendList = "weekendList"/>
     </div>
 </template>
 
@@ -27,14 +27,32 @@ export default {
         Recommend,
         Weekend
     },
+    data (){
+        return{
+            city:'',
+            icons:[],
+            recommendList:[],
+            swiperList:[],
+            weekendList:[]
+        }
+    },
     methods:{
         // 获取数据
         getHomeInfo:function(){
             axios.get('/mock/index.json')
                  .then(this.getHomeSucc)
         },
-        getHomeSucc:function(res){
-            console.log(res.data)
+        getHomeSucc:function(re){
+            let res = re.data
+            if(res.ret && res.data){
+                let {city, icons, recommendList, swiperList, weekendList} = res.data
+                this.city = city
+                this.icons = icons
+                this.recommendList = recommendList
+                this.swiperList = swiperList
+                this.weekendList = weekendList
+            }
+            
         }
     },
     mounted (){

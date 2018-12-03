@@ -16,68 +16,18 @@
 <script>
 export default {
     name:'Icons',
+    props:{
+        icons:Array
+    },
     data (){
         return {
             swiperOption:{
                 autoplay:false
-            },
-            icons:[
-                {
-                    id:'01',
-                    src:require('@/assets/img/home/icons/icon1.png'),
-                    title:'旅游景点'
-                },
-                {
-                    id:'02',
-                    src:require('@/assets/img/home/icons/icon2.gif'),
-                    title:'景点门票'
-                },
-                {
-                    id:'03',
-                    src:require('@/assets/img/home/icons/icon3.png'),
-                    title:'滑雪季'
-                },
-                {
-                    id:'04',
-                    src:require('@/assets/img/home/icons/icon4.png'),
-                    title:'泡温泉'
-                },
-                {
-                    id:'05',
-                    src:require('@/assets/img/home/icons/icon5.png'),
-                    title:'动物园'
-                },
-                {
-                    id:'06',
-                    src:require('@/assets/img/home/icons/icon6.png'),
-                    title:'长城'
-                },
-                {
-                    id:'07',
-                    src:require('@/assets/img/home/icons/icon7.png'),
-                    title:'双鹤乡'
-                },
-                {
-                    id:'08',
-                    src:require('@/assets/img/home/icons/icon8.png'),
-                    title:'旅游景点'
-                },
-                {
-                    id:'09',
-                    src:require('@/assets/img/home/icons/icon9.png'),
-                    title:'旅游景点'
-                },
-                {
-                    id:'10',
-                    src:require('@/assets/img/home/icons/icon10.png'),
-                    title:'旅游景点'
-                }
-            ]
+            }
         }
     },
     computed : {
         pages () {
-
             let pages = []
             this.icons.forEach((item, index) => {
                 let page = Math.floor(index / 8) // 总页数
