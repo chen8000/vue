@@ -4,21 +4,27 @@
         <Header />
         <HomeSwiper />
         <Icons />
+        <Recommend />
+        <Weekend />
     </div>
 </template>
 
 <script>
 
-import Header from './components/header.vue'
-import HomeSwiper from './components/swiper.vue'
-import Icons from './components/icons.vue'
+import Header from './components/header'
+import HomeSwiper from './components/swiper'
+import Icons from './components/icons'
+import Recommend from './components/recommend'
+import Weekend from './components/weekend'
 
 export default {
     name:'Home',
     components:{
         Header,
         HomeSwiper,
-        Icons
+        Icons,
+        Recommend,
+        Weekend
     }
 }
 </script>

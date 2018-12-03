@@ -1,0 +1,79 @@
+<template>
+    <div>
+        <div class="title">热销推荐</div>
+        <ul>
+            <li class="item border-bottom" :key="res.id" v-for="res in recommendList">
+                <div class="item-img-wrapper">
+                    <img class="item-img" :src="res.imgSrc" />
+                </div>
+                <div class="item-info">
+                    <p class="item-title">{{res.title}}</p>
+                    <p class="item-desc">{{res.desc}}</p>
+                    <button class="item-button">查看详情</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<script>
+export default {
+    name:'Recommend',
+    data (){
+        return {
+            recommendList:[
+                {
+                    id:'01',
+                    imgSrc:require('@/assets/img/home/recommend/item1.jpg'),
+                    title:'北京野生动物园',
+                    desc:'17775条评论'
+                },
+                {
+                    id:'02',
+                    imgSrc:require('@/assets/img/home/recommend/item1.jpg'),
+                    title:'北京野生动物园',
+                    desc:'17775条评论'
+                }
+            ]
+        }
+    }
+}
+</script>
+
+<style lang="stylus" scoped>
+    @import '~@/assets/styles/mixins.styl'
+    .title
+        margin-top: .2rem
+        line-height :.8rem
+        background: #eee
+        text-indent:.2rem   
+    .item
+        overflow: hidden
+        display:flex
+        height: 1.9rem
+        .item-img
+            width: 1.7rem
+            height: 1.7rem
+            padding:.1rem
+        .item-info
+            flex:1
+            padding:.1rem
+            min-width:0
+            .item-title
+                line-height: .54rem
+                font-size: .32rem
+                ellipsis()
+            .item-desc
+                line-height:.4rem
+                color: #ccc
+                ellipsis()
+            .item-button
+                background: #ff9300
+                padding: 0 .1rem
+                border-radius:.06rem
+                margin-top:.16rem
+                color:#fff
+                line-height:.44rem
+</style>
+
+
