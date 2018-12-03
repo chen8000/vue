@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Header from './components/header'
-import HomeSwiper from './components/swiper'
+import Header from './components/header.vue'
+import HomeSwiper from './components/swiper.vue'
 export default {
     name:'Home',
     components:{
