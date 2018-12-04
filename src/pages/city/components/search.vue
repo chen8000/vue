@@ -43,6 +43,7 @@ export default {
         handleCityClick(city){
             this.$store.commit('changeCity', city)
             this.$router.push('/')
+            this.keyword = ''
         }
     },
     watch :{

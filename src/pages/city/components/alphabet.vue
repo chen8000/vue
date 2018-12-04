@@ -47,11 +47,10 @@ export default {
             this.touchStatus = true
         },
         handleTouchMove (e){
+            if(this.timer){
+                clearInterval(this.timer)
+            }
             if(this.touchStatus){
-
-                if(this.timer){
-                    clearInterval(this.timer)
-                }
                 
                 this.timer = setInterval(() => {
                     
@@ -64,6 +63,7 @@ export default {
                     const index  = Math.floor((touchY - this.startY) / 20)  
 
                     if(index >= 0 && index < this.letters.length){
+                        
                         this.$emit('change', this.letters[index])
                     }
                 }, 16)
@@ -72,6 +72,7 @@ export default {
             }
         },
         handleTouchEnd (){
+            clearInterval(this.timer)
             this.touchStatus = false
         }
     }
