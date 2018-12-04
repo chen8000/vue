@@ -1,12 +1,73 @@
 <template>
-    <div class="search">
-        <input class="search-input" type="text" placeholder="输入城市名或拼音">
+    <div>
+        <div class="search">
+            <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音">
+        </div>
+        <div class="search-content" ref="search" v-show="keyword">
+            <ul>
+                <li 
+                    class="border-bottom search-item" 
+                    :key="item.id" 
+                    v-for = "item in list"
+                    >{{item.name}}</li>
+                <li class="border-bottom search-item" v-show="hasNoData">没有找到显示数据</li>
+            
+            </ul>
+        </div>
     </div>
+    
 </template>
 
 <script>
+import Bscroll from 'better-scroll'
+
 export default {
-    name:'Search'
+    name:'Search',
+    data (){
+        return{
+            keyword:'',
+            list:[],
+            timer:null
+        }
+    },
+    props:{
+        cities:Object
+    },
+    computed:{
+        hasNoData (){
+            return !this.list.length
+        }
+    },
+    watch :{
+        keyword (){
+            if(this.timer){
+                clearInterval(this.timer)
+            }
+            if(!this.keyword){
+                this.list = []
+                return
+            }
+
+            this.timer = setInterval(() => {
+
+                const result = []
+
+                for(let i in this.cities){
+                    this.cities[i].forEach( value => {
+                        if(value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1){
+                            result.push(value)
+                        }
+                    })
+                }
+
+                this.list = result
+
+            }, 100)
+        }
+    },
+    mounted (){
+        this.scroll = new Bscroll(this.$refs.search)
+    }
 }
 </script>
 
@@ -25,6 +86,20 @@ export default {
             color: #666
             padding:0 .1rem
             box-sizing: border-box
+    .search-content
+        overflow:hidden
+        position:absolute
+        top:1.58rem
+        left:0
+        right:0
+        bottom:0
+        z-index:1
+        background:#eee
+        .search-item
+            line-height: .62rem
+            padding-left: .2rem
+            color: #666
+            background: #fff
 </style>
 
 

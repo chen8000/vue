@@ -1,11 +1,11 @@
 <template>
     <div>
         <Header />
-        <Search />
-        <List :cities = "cities" :letter="letter" :hot = "hotCities"/>
+        <Search :cities = "cities"/>
+        <List :cities = "cities" :letter = "letter" :hot = "hotCities"/>
         <Alphabet 
             :cities = "cities"
-            @change="handleLetterChange"
+            @change = "handleLetterChange"
             />
     </div>
 </template>
