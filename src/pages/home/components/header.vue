@@ -5,8 +5,14 @@
         </div>
         <div class="input">
             <i class="iconfont">&#xe600;</i>
-            输入城市/景点/游玩主题</div>
-        <div class="right">{{ city }}<i class="iconfont right-icon">&#xe64a;</i></div>
+            输入城市/景点/游玩主题
+        </div>
+
+        <router-link to="/City">
+            <div class="right">{{ city }}
+                <i class="iconfont right-icon">&#xe64a;</i>
+            </div>
+        </router-link>
     </div>
 </template>
 
@@ -23,7 +29,7 @@ export default {
     @import '~@/assets/styles/varibles.styl';
     .header
         display: flex
-        line-height: .86rem /* 43/50 */
+        line-height: $headerHeight /* 43/50 */
         background: $bgColor
         color: #fff
         .left
@@ -45,6 +51,7 @@ export default {
             width: 1.24rem
             float: right
             text-align: center  
+            color: white
             .right-icon
                 display: inline-block
                 margin-left: .1rem /* 5/50 */
