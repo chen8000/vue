@@ -9,6 +9,7 @@
                     class="border-bottom search-item" 
                     :key="item.id" 
                     v-for = "item in list"
+                    @click="handleCityClick(item.name)"
                     >{{item.name}}</li>
                 <li class="border-bottom search-item" v-show="hasNoData">没有找到显示数据</li>
             
@@ -36,6 +37,12 @@ export default {
     computed:{
         hasNoData (){
             return !this.list.length
+        }
+    },
+    methods:{
+        handleCityClick(city){
+            this.$store.commit('changeCity', city)
+            this.$router.push('/')
         }
     },
     watch :{

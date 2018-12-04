@@ -1,7 +1,7 @@
 
 <template>
     <div class="home">
-        <Header :city = "city"/>
+        <Header/>
         <HomeSwiper :item = "swiperList"/>
         <Icons :icons = "icons"/>
         <Recommend :recommendList = "recommendList"/>
@@ -29,7 +29,6 @@ export default {
     },
     data (){
         return{
-            city:'',
             icons:[],
             recommendList:[],
             swiperList:[],
@@ -46,7 +45,6 @@ export default {
             let res = re.data
             if(res.ret && res.data){
                 let {city, icons, recommendList, swiperList, weekendList} = res.data
-                this.city = city
                 this.icons = icons
                 this.recommendList = recommendList
                 this.swiperList = swiperList
