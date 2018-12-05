@@ -8,7 +8,7 @@
             输入城市/景点/游玩主题
         </div>
 
-        <router-link to="/City">
+        <router-link to="/city">
             <div class="right">{{ city }}
                 <i class="iconfont right-icon">&#xe64a;</i>
             </div>
