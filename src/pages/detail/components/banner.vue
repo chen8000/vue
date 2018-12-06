@@ -12,17 +12,21 @@
                 </div>
             </div>
         </div>  
-        <common-gallary v-if="showGallary" :imgs="imgs" @close="handleBannerClick"/>
+        <Fade>
+            <common-gallary v-if="showGallary" :imgs="imgs" @close="handleBannerClick"/>
+        </Fade>
     </div>
     
 </template>
 
 <script>
 import CommonGallary from '@/common/gallary/Gallary'
+import Fade from '@/common/fade/fade'
 export default {
     name:'Banner',
     components:{
-        CommonGallary
+        CommonGallary,
+        Fade
     },
     props:{
         sightName:String,
